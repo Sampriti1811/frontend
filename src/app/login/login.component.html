@@ -1,0 +1,51 @@
+<style>
+  body {
+  background-image:url("https://jsmsikkim.com/images/11.png");
+  background-position: initial;
+  background-attachment:local;
+  background-size:cover;
+  position:fixed;
+  }
+  #advert{
+  width:auto ;
+  height:100px;
+  background: rgba(255,255,255, 0.5);
+  border-radius:10px;
+  padding: 100px;
+  margin: 150px;
+  }
+  h1 {
+  color: black;
+  text-align: center;
+  font-size:80px;
+  font-family:'Montserrat', 'sans-serif';
+  padding:15px;
+  width: 1350px;
+  margin-top: 15px;
+  }
+  .link{
+  font-size:40px;
+  border-radius:7px;
+  background-color:rgba(192,192,192,0.6);
+  margin-right:15px;
+  }
+  .link:hover{
+  background-color:white;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+</style>
+    <title>Real Estate Broker Application</title>
+  
+  <body>
+    <h1 text-alingment=center >Real Estate Broker Application</h1>
+    <div id="advert">
+        <br>
+        <button [routerLink]= "['/custreg']" type="button" data-bs-toggle="modal" 
+        class="link" style="color: rgb(15, 15, 15); font-family:'Georgia', 'cursive';">Customer Registration</button>
+        <button [routerLink]= "['/custlogin']" type="button" data-bs-toggle="modal" 
+        class="link" style="color: rgb(15, 15, 15); font-family:'Georgia', 'cursive';">Customer Login</button>
+        <br>
+        <button [routerLink]= "['/brlogin']" type="button" data-bs-toggle="modal" 
+        class="link" style="color: rgb(15, 15, 15); font-family:'Georgia', 'cursive';">Broker Login</button>
+    </div>
+</body>

@@ -1,0 +1,63 @@
+<style>
+    h1{
+      font-family:'Georgia', 'cursive';
+    }
+    
+    body{
+      background-image: url('https://assets-news.housing.com/news/wp-content/uploads/2020/11/24190402/What-is-an-immovable-property-FB-1200x700-compressed.jpg'); 
+      width: 200%;
+      height: 100%;
+      position: fixed;
+      opacity: 0.8;
+    }
+    .card {
+      width: 400px;
+      height: 400px;
+      color: rgb(17, 15, 15);
+      padding: 20px 50px;
+      font-family: 'Montserrat', 'sans-serif';
+      max-width: 100%;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration-color: black;
+      margin-top: 30px;
+      margin-left: 500px;
+      opacity: 0.8;
+      }
+      .link:hover{
+      background-color:rgb(25, 196, 33);
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+      }
+  </style>
+  
+  <nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;"> 🏡Property Home</h1>
+          <div class="d-flex">
+            <button [routerLink]= "['/']" type="button" data-bs-toggle="modal" 
+               class="btn btn-block btn-lg fw-bold text-center" style="color: rgb(15, 15, 15); font-family:'Georgia', 'cursive';">Home</button>
+          </div>
+    </div>
+  </nav>
+  <body>
+  
+    <div class="card" style="width: 500px;">
+    <!-- (ngSubmit)="!custForm.invalid && custReg()" #custForm="ngForm" -->
+    <form (ngSubmit)="!propForm.invalid && propReg()" #propForm="ngForm">
+      <h2>Update Property Details</h2>  <br>
+      <fieldset class="form-group">
+    
+      Property Type : <input type="text" name="prop_type" placeholder="Enter property type" [(ngModel)]="propnew.prop_type" required>{{prop_type}}<br><br>
+  
+      Offer Type : <input type="text" name="offer_type" placeholder="Enter offer type" [(ngModel)]="propnew.offer_type" >{{offer_type}}<br><br>
+
+      Price : <input type="text" name="price" placeholder="Enter price" [(ngModel)]="propnew.price" >{{price}}<br><br>
+      
+    </fieldset>  
+      <button type="submit"  data-bs-toggle="modal" 
+               class="link btn btn-lg fw-bold text-center" style="color: rgb(15, 15, 15); font-family:'Georgia', 'cursive';"
+               >Update</button><br>
+    </form>
+    </div>
+  
+  </body>

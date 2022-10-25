@@ -1,0 +1,65 @@
+<style>
+    h1{
+      font-family:'Georgia', 'cursive';
+    }
+    body{
+      background-image: url("https://media-exp1.licdn.com/dms/image/C5612AQEXTt4grfiTxQ/article-cover_image-shrink_720_1280/0/1520181045312?e=2147483647&v=beta&t=Z6g_nFW524kw9hTrqMfS9CshPF4-VV4OffMyJmROOCI"); 
+      width: 200%;
+      height: 100%;
+      position: fixed;
+      opacity: 0.8;
+    }
+    .card {
+      width: 500px;
+      height: 600px;
+      color: rgb(17, 15, 15);
+      padding: 20px 50px;
+      font-family: 'Montserrat', 'sans-serif';
+      max-width: 100%;
+      border-radius: 10px;
+      text-align: center;
+      text-decoration-color: black;
+      margin-top: 30px;
+      margin-left: 500px;
+      opacity: 0.8;
+      }
+      .link:hover{
+      background-color:rgb(25, 196, 33);
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+      }
+</style>
+
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;"> 🏡Customer Home</h1>
+          <div class="d-flex">
+            <button [routerLink]= "['/']" type="button" data-bs-toggle="modal" 
+               class="btn btn-block btn-lg fw-bold text-center" style="color: rgb(15, 15, 15); font-family:'Georgia', 'cursive';">Home</button>
+          </div>
+    </div>
+</nav>
+<body>
+  
+    <div class="card" style="width: 500px;">
+    
+    <form (ngSubmit)="!custForm.invalid && custReg()" #custForm="ngForm">
+      <h2>Add Customer Details</h2>  <br>
+      <fieldset class="form-group">
+      Username : <input type="text" name="cust_name" placeholder="Enter your username" [(ngModel)]="cust.cust_name" required><br><br>
+
+      Gender : <input type="text" name="cust_gender" placeholder="Enter your gender" [(ngModel)]="cust.cust_gender" ><br><br>
+
+      Age : <input type="text" name="cust_age" placeholder="Enter your age" [(ngModel)]="cust.cust_age" ><br><br>
+      Email ID : <input type="email" name="cust_email" placeholder="Enter your email ID" [(ngModel)]="cust.cust_email" ><br><br>
+      Password : <input type="password" name="cust_password" placeholder="Enter your password" [(ngModel)]="cust.cust_password" required><br><br>
+      Phone number : <input type="tel" name="cust_phno" placeholder="Enter mobile number" [(ngModel)]="cust.cust_phno" ><br><br>
+      Aadhar ID : <input type="text" name="aadhar_no" placeholder="Enter aadhar ID" [(ngModel)]="cust.aadhar_no" ><br>
+      </fieldset>  
+      <button type="submit" data-bs-toggle="modal" 
+               class="link btn btn-lg fw-bold text-center" style="color: rgb(15, 15, 15); font-family:'Georgia', 'cursive';"
+               >Register</button><br>
+        <h5>Already a member? Then <a [routerLink]= "['/custlogin']">Login</a></h5>
+    </form>
+    </div>
+
+</body>

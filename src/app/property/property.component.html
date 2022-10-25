@@ -1,0 +1,48 @@
+<style>
+    h1{
+      font-family:'Georgia', 'cursive';
+    }
+    
+</style>    
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;"> 🏡Property Home</h1>
+          <div class="d-flex">
+            <button [routerLink]= "['/']" type="button" data-bs-toggle="modal" 
+               class="btn btn-outline-light btn-lg fw-bold text-center mr-1" style="color: rgb(15, 15, 15); font-family:'Georgia', 'cursive';">Logout </button>
+                 
+          
+          
+          <button [routerLink]= "['/addproperty']" type="button" data-bs-toggle="modal" 
+               class="btn btn-outline-light btn-lg fw-bold text-center" style="color: rgb(15, 15, 15); font-family:'Georgia', 'cursive';"> Add Property</button> 
+          </div>
+          </div>
+</nav>
+<body>
+  <table class="table ">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Property Id</th>
+        <th scope="col">Property Type</th>
+        <th scope="col">City</th>
+        <th scope="col">Offer Type</th>
+        <th scope="col">Price (in Rupees)</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of prop">
+        <td>{{row.prop_id}}</td>
+        
+        <td>{{row.prop_type}}</td>
+        <td>{{row.city}}</td>
+        <td>{{row.offer_type}}</td>
+        <td>{{row.price}}</td>
+        <!-- <td><button type="button" class="btn btn-outline-primary mr-2" [routerLink]= "['/updateproperty/{{row.prop_id}}']">Edit</button> -->
+         <td> <button type="button" class="btn btn-outline-primary mr-2" (click)="editbutton(row.prop_id)">Edit</button>
+        <button type="button" class="btn btn-outline-danger" (click)="deleteProp(row.id)">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+<!-- (click)="updateProp(row.id)" -->
